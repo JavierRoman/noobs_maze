@@ -1,9 +1,9 @@
 # Author: Javier Roman
 
 import sys
-from argparse import ArgumentParser
+from argparse import ArgumentParser, ArgumentTypeError
 from maze_algorithms import a_star
-from maze_utils import euclidean, MazeSolverArgumentsException
+from maze_utils import euclidean
 from noops_maze_api import *
 
 algorithms = {"a_star": a_star} # Dictionary with different maze solving algorithms.
@@ -32,25 +32,22 @@ def parse_args():
                       default=10, help="Minimum maze size.")
     group2.add_argument("-M", "--maxSize",  type=int, choices=possible_values, 
                       default=200, help="Maximum maze size.")
-    try:
-        args = parser.parse_args()
-    except:
-        print("-h/--help for more information.")
-        sys.exit(1)
-    else:
-        if args.race and args.numMazes:
-            parser.print_usage()
-            raise MazeSolverArgumentsException("Race mode is mutual exclusive with Test mode.\n-h/--help for more information.")
-        if args.minSize > args.maxSize:
-            parser.print_usage()
-            raise MazeSolverArgumentsException("Minimum size cannot be greater than maximum size.\n-h/--help for more information.")
-        return args        
+
+    args = parser.parse_args()
+
+    if args.race and args.numMazes:
+        parser.print_usage()
+        raise ArgumentTypeError("Race mode is mutual exclusive with Test mode.\n")
+    if args.minSize > args.maxSize:
+        parser.print_usage()
+        raise ArgumentTypeError("-m/--minSize cannot be greater than -M/--maxSize\n")
+    return args        
 
 def main():
     try:
         args = parse_args()
-    except MazeSolverArgumentsException as ve:
-        print("ERROR:", ve)
+    except ArgumentTypeError as ate:
+        print("error:", ate, end="")
     else:
         algorithm = algorithms[args.algorithm]
         if args.race is not None:
@@ -68,7 +65,7 @@ def main():
                 print("\tMessage:", data['message'])
                 print("\tThe best solution has {} steps. Your solution has {}"
                         .format(data['shortestSolutionLength'], data['yourSolutionLength']))
-        
+    
 
 if __name__=="__main__":
     main()

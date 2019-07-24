@@ -2,8 +2,7 @@
 
 import math
 
-class MazeSolverArgumentsException(Exception):
-    pass
+
 
 def euclidean(node, goal):
     """
@@ -105,3 +104,4 @@ def best_estimation(explored_nodes, estimations):
             best_node = node
             best_est = estimation
     return best_node
+
