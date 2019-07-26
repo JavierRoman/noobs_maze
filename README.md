@@ -1,6 +1,6 @@
 # Noops maze challenge solver.
 
-In this project I implement a very complete program to solve Noops Maze Challenge (https://github.com/noops-challenge/mazebot). 
+In this project I implemented a very complete and easy to use program to solve Noops Maze Challenge (https://github.com/noops-challenge/mazebot). 
 
 I'll be adding more algorithms in the future. For now only A Star Search algorithm is implemented. 
 
