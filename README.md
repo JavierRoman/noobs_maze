@@ -21,8 +21,10 @@ This will show some help.
 The arguments of this program are:  
 **Required**
 * -a --algorithm [algorithm]: Specifies the algorithm to use to solve the mazes.  
+
 **Race mode**
-* -r --race [username]: Starts race mode specifying the player's github username.  
+* -r --race [username]: Starts race mode specifying the player's github username.
+
 **Test mode**
 * -n --numMazes [number of mazes]: Number of random mazes to solve.
 * -m --minSize [minimum maze size]: Minimum maze size.
