@@ -5,14 +5,14 @@ from maze_utils import *
 def a_star(maze, heuristic):
     """
     A star search algorithm.
-    
+
     Args:
-        maze (list): List of lists with the representation of the maze. 
-                     ["X": represents a wall, " ": represents an empty cell, 
+        maze (list): List of lists with the representation of the maze.
+                     ["X": represents a wall, " ": represents an empty cell,
                       "A": represents the starting point, "B": represents the ending point]
 
         heuristic (function): Heuristic from a node to the goal. Euclidian or Manhattan distance.
-    
+
     Returns:
         str: An string with the directions to follow to reach the goal 
              ["N": North, "S": South, "E": East, "W": West]
@@ -27,7 +27,7 @@ def a_star(maze, heuristic):
     previous_nodes = {}
 
     g = {start: 0}
-    f = {start: g[start] + heuristic(start, end)} 
+    f = {start: g[start] + heuristic(start, end)}
 
     while len(explored_nodes) > 0:
         current = best_estimation(explored_nodes, f)

@@ -2,16 +2,14 @@
 
 import math
 
-
-
 def euclidean(node, goal):
     """
     Euclidean squared distance.
-    
+
     Args:
         node (tuple): Current position.
         goal (tuple): Goal location.
-    
+
     Returns:
         float: Float value with the squared distance between the two points.
     """
@@ -24,7 +22,7 @@ def euclidean(node, goal):
 def neighbours(current, maze_map):
     """
     This function retrieves all the possible moves from the current cell.
-    
+
     Args:
         current (tuple): 2D possition in the maze.
         maze_map (list): List of lists with the representation of the maze. 
@@ -47,11 +45,11 @@ def neighbours(current, maze_map):
 def direction(nodeA, nodeB):
     """
     This function retrieves the direction followed to get from one node to another.
-    
+
     Args:
         nodeA (tuple): Initial node.
         nodeB (tuple): Final node.
-    
+
     Returns:
         str: An string with the directions to follow to reach the goal 
              ["N": North, "S": South, "E": East, "W": West]
@@ -66,11 +64,11 @@ def path(previous_nodes, current):
     """
     This function reconstruct the path retrieving the set of directions needed to
     go from the starting point to the end point.
-    
+
     Args:
         previous_nodes (dict): Dictionary with the previous node explored for each node.
         current (tuple): 2D current position.
-    
+
     Returns:
         str: String with the directions needed to follow to reach the destination.
     """
@@ -84,14 +82,14 @@ def path(previous_nodes, current):
 def best_estimation(explored_nodes, estimations):
     """
     This function retreives the best option from the set of explored options.
-    
+
     Args:
         explored_nodes (list): List of explored nodes.
         estimations (dict): Dictionary with the estimations calculated with the
                             formula: f = g + h where g is the distance from the 
                             beggining to that node and h the heuristic from that 
                             node to the goal.
-    
+
     Returns:
         tuple: 2D location of the best node.
     """
