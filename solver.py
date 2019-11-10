@@ -13,7 +13,7 @@ def parse_args():
     This function parses execution arguments and return them.
     
     Raises:
-        MazeSolverArgumentsException: This exception is raised when a conflict is found between arguments.
+        ArgumentTypeError: This exception is raised when a conflict is found between arguments.
     
     Returns:
         class: Class with the different arguments.
