@@ -1,6 +1,6 @@
 # Noops maze challenge solver.
 
-In this project I implement a very complete program to solve Noops Maze Challenge (https://github.com/noops-challenge/mazebot). 
+In this project I implemented a very complete and easy to use program to solve Noops Maze Challenge (https://github.com/noops-challenge/mazebot). 
 
 I'll be adding more algorithms in the future. For now only A Star Search algorithm is implemented. 
 
@@ -18,16 +18,18 @@ python solver.py -h
 
 This will show some help.
 
-The arguments of this program are:
-<b> Required </b>
-* -a --algorithm [algorithm]: Specifies the algorithm to use to solve the mazes.
-<b> Race mode </b>
+The arguments of this program are:  
+**Required**
+* -a --algorithm [algorithm]: Specifies the algorithm to use to solve the mazes.  
+
+**Race mode**
 * -r --race [username]: Starts race mode specifying the player's github username.
-<b> Test mode </b>
+
+**Test mode**
 * -n --numMazes [number of mazes]: Number of random mazes to solve.
 * -m --minSize [minimum maze size]: Minimum maze size.
-* -M --maxSize [maximum maze size]: Maximum maze size.
-
+* -M --maxSize [maximum maze size]: Maximum maze size.  
+  
 You can't use Race Mode and Test Mode at the same time. The example below will fail.
 ```
 python solver.py -a a_star -r javierroman -n 100
